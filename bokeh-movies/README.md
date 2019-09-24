@@ -21,7 +21,7 @@ La version de Python choisie pour cet exercice est Python 3.7.
 ### Architecture
 Le code de l'application est contenu dans le répertoire *src/*. Ce dossier contient le code Python, les requêtes SQL, le code HTML et des métadonnées.
 
-Les données concernant les films doivent se situer dans le dossier */home/<user>/.bokeh*. <user> représente l'utilisateur qui lance l'application
+Les données concernant les films doivent se situer dans le dossier */home/\<user\>/.bokeh*. \<user\> représente l'utilisateur qui lance l'application
 
 ### Utilisation
 
@@ -37,7 +37,7 @@ Les exigences pour l'application Bokeh sont les suivantes
 ## Choix et analyse de l'image de base
 
 Pour la construction de l'image Docker, il faut choisir une image de base robuste et ne contenant que le strict nécessaire. En vérité, il existe une image Docker Bokeh officielle maintenue par l'équipe de Bokeh. Cette image de base serait toute indiquée. Mais pour l'intêret de l'exercice, nous ferons l'installation de bokeh par nous-même. Partir d'un image très bas niveau comme "Ubuntu" ou "Alpine" nécessiterait trop d'opérations et conduirait probablement à l'applicationd de mauvaises pratiques. Nous partirons donc d'une image Python 3.7. Procéder aux étapes suivantes:
-- Se rendre sur le Dockerhub dans le dépôt Python: https://hub.docker.com/\_/python
+- Se rendre sur le Dockerhub dans le dépôt Python: https://hub.docker.com/_/python
 - Examiner les tags disponibles et choisir un tag approprié (le tag 3.7)
 - Faire un *pull* de l'image choisie: `docker pull python:3.7`
 - Examiner l'image téléchargée: `docker inspect python:3.7`. Trouver des informations utiles telles que l'OS, les variables d'environnement, la commande de lancement, etc.
