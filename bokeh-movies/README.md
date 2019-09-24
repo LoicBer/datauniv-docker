@@ -52,6 +52,7 @@ Maintenant que la base de travail est définie, nous allons ajouter des couches 
 - Utiliser les mots clés Docker pour réaliser les instruction en commentaire (une commande par commentaire). Les mots clé à utiliser sont les suivants:
   + FROM <image:tag> : pour indiquer l'image de base
   + COPY \<fichier ou dossier source local\> \<destination dans l'image\> : pour ajouter des fichiers à l'image
+  + USER <username>: pour changer l'utilisateur courant
   + RUN <commande shell> : exécuter une commande shell dans l'image (exemple: `RUN pip install ...`)
   + EXPOSE <port number>: déclarer un port qui sera utilisé
   + ENTRYPOINT <commande shell>: définir la commande à exécuter au démarrage du conteneur
