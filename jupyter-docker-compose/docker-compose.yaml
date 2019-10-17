@@ -1,0 +1,35 @@
+---
+# docker-compose version
+version: "3"
+
+# liste des conteneurs à créer
+services:
+  # conteneur Jupyter
+  jupyter:
+    # image à utiliser
+    image: jupyter/minimal-notebook:latest
+    # port à exposer au format: extérieur:intérieur
+    ports: 
+      - "8888:8888"
+    # volumes à attacher au conteneur
+    volumes:
+      # monter le dossier jupyter-data sur l'hôte sur /home/jovyan dans le conteneur
+      - ./jupyter-data:/home/jovyan/persist # type de volume: bind-mount
+
+    # variables d'environement
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+
+  # conteneur serveur Git (Gogs)
+  gitgogs:
+    image: gogs/gogs:latest
+    ports:
+      - "8022:22"
+      - "3000:3000"
+    volumes:
+    # utilisation du "named volume" défini dans la section volumes
+      - gogs-data:/data # type de volume: named volume
+
+# "named volumes"
+volumes:
+  gogs-data:
